@@ -1,0 +1,16 @@
+{
+    "control":
+    [
+    {
+        "clickThroughUrl":[
+            "https://lemmatechnologies.com"
+         ],
+         "videoURL":["https://media.lemmatechnologies.com/media/265/20220708142707-2160x3840_Shopping_ROW.mp4"],
+         "buyerCreativeId":"26865",
+         "accountId": 3023,
+         "advertiserName":["Lemma Technologies"],
+         "width":2160,
+         "height":3840
+    }
+   ]
+}

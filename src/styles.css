@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+/* You can add global styles to this file, and also import other style files */
+@import "~@ng-select/ng-select/themes/default.theme.css";
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.pagination {
+  list-style: none;
+}
+.pagination li {
+  display: inline-block;
+}
+.uploadDocument input {
+  opacity: 0;
+  position: absolute;
+  z-index: 3;
+  width: 170px;
+  height: 24px;
+  border: 1px solid #000;
+}
+.uploadDocument svg {
+  position: absolute;
+  z-index: 1;
+  fill: rgb(248, 159, 43);;
+}
+.uploadDocument span {
+  margin-left: 30px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

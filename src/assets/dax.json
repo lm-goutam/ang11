@@ -1,0 +1,9 @@
+
+{ "ads":
+[ {
+     "dadid":"557391", 
+     "adomain": "advertiserdomain.com" ,
+     "creative":{ "iurl":"http://cdn.dsp.com/iurls/557391.gif" }
+ } 
+ ] 
+}
