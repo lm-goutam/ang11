@@ -21,7 +21,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .uploadDocument svg {
   position: absolute;
   z-index: 1;
-  fill: rgb(248, 159, 43);;
+  fill: rgb(248, 159, 43);
 }
 .uploadDocument span {
   margin-left: 30px;

@@ -1,0 +1,88 @@
+<body>
+    <div class="container" >
+      <div class="row">
+        
+        <form  name="form" #intgsform="ngForm" (ngSubmit)="intgsform.valid && onSubmit()"  (ngSubmit)="intgsform.valid && onIntgsUpdate(intgsform.value)" (ngSubmit)="intgsform.invalid && unSubmit()" >
+          <div class="form-bg" >
+                <div class="panel panel-primary">
+                  <div class="panel-body">
+    
+                              <br>
+                              <br>
+                   
+                              <div class="form-group">
+                                <label for="I_cms">Organization Name</label>
+                                <label style="font-size: 15px; border-radius: 4px; width:100% ;background-color: white; text-align: left; padding: 8px; box-sizing: border-box; ">
+                                  {{ orgName }}
+                                </label>
+                              </div>
+    <br/>
+                    <div class="form-group">
+                      <label for="I_cms">CMS Name</label></div>
+                      <div class=" col-md-3 " style="height:20%;font-size: 15px; width:100%">
+                      <ng-select id="I_cms" name="i_cms" [(ngModel)]="selectedCms" (change)="selectedC()" required >
+                        <ng-option *ngFor="let branch of cmsData" [value]="branch.Cms_id" >
+                          {{branch.Cms_name}}
+                        </ng-option>
+                      </ng-select>
+                    </div>
+    <br/>
+    
+                    <div class="form-group">
+                      <label for="I_status">Status</label></div>
+                      <div class=" col-md-3 " style="height:20%;font-size: 15px; width:100%">
+                      <ng-select id="I_status" name="i_status" [(ngModel)]="selectedStatus" (change)="selectedS()"  required>
+                        <ng-option *ngFor="let sts of statData" [value]="sts.Stat_id">
+                          {{sts.Stat_name}}
+                        </ng-option>
+                      </ng-select>
+                    </div>
+    
+    <br/>
+                    <div class="form-group">
+                      <label for="I_app">Applications</label>
+                      
+                    </div>  
+                    <div class=" col-md-3 " style="height:20%;font-size: 15px; width:100%">
+                      <ng-select id="I_app" name="i_app" [(ngModel)]="selectedApp" (change)="selectedS()" [multiple]="true"  (change)="itemSelected" required>
+                        <ng-option *ngFor="let aap of appData" [value]="aap.App_id">{{aap.App_name}}</ng-option>
+                      </ng-select>
+                      
+                    </div>
+    
+    <br/>
+                    <div class="form-group">
+                      <label for="App_url">Application URL</label>
+                      <input id="App_url" type="text" class="form-control"
+                            name="app_url" [(ngModel)]="selectedAppUrl"  (change)="changeA($event)">
+                    </div>  
+    
+    <br/>
+                    <div class="form-group">
+                      <label for="Comment">Comments</label>
+                      <input id="Comment" type="text" class="form-control"
+                            name="comment" [(ngModel)]="selectedCom"  (change)="changeC($event)"
+                            
+                            >
+                    </div>    
+    
+                    
+    
+                  </div>
+                  <br/>
+                  <br/>
+                  <div class="panel-footer" style="text-align: center;">
+                    <button class="btn btn-primary" type="submit" >Done</button>
+                 
+                  <br><br>
+                  <br>
+                    
+                  </div>
+                </div>
+              <!--  {{selectedOrg |json}} {{selectedCms |json}} {{selectedStatus |json}} {{selectedApp |json}} {{selectedAppUrl |json}} {{selectedCom |json}}-->
+    
+          </div>
+          </form>
+      </div>
+    </div>
+    </body>

@@ -41,6 +41,8 @@ import { DemotableComponent } from './demotable/demotable.component';
 import { CreativePushComponent } from './creative-push/creative-push.component';
 import { DaxComponent } from './dax/dax.component';
 import { VformComponent } from './vform/vform.component';
+import { IntegrationComponent } from './integration/integration.component';
+import { IntgUpdateComponent } from './intg-update/intg-update.component';
 // import { PagingSampleComponent } from "./grid/grid-paging-sample/grid-paging-sample.component";
 // import { IgxPreventDocumentScrollModule } from "./directives/prevent-scroll.directive";
 
@@ -59,6 +61,8 @@ import { VformComponent } from './vform/vform.component';
     CreativePushComponent,
     DaxComponent,
     VformComponent,
+    IntegrationComponent,
+    IntgUpdateComponent,
   ],
   imports: [
     BrowserModule,

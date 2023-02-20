@@ -1,33 +1,28 @@
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
 <div class="container" >
-  <div class="row">
-    <form name="form" (ngSubmit)="form.valid && onSubmit()" #form="ngForm">
+  <div class="row justify-content-center">
+    
+    <form  name="form" #intgsform="ngForm" (ngSubmit)="intgsform.valid && onSubmit()"  (ngSubmit)="intgsform.valid && onIntgsCreate(intgsform.value)" (ngSubmit)="intgsform.invalid && unSubmit()" >
       <div class="form-bg" >
             <div class="panel panel-primary">
               <div class="panel-body">
 
-                          
+                          <br>
+                          <br>
                 <div class="form-group">
-                  <label for="branch">Organization</label></div>
-                  <div class=" col-md-3 " style="height:20%;font-size: 15px; width:100%">
-                  <ng-select id="branch" name="branch" [(ngModel)]="selectedOrg" (change)="selectedO()"  (change)="itemSelected">
+                  <label for="I_org">Organization</label></div>
+                  <div class=" col-md-3 " style="height:20%;font-size: 15px; width:100%; float: center;" >
+                  <ng-select id="I_org" name="i_org" [(ngModel)]="selectedOrg" (change)="selectedO()" required>
                     <ng-option *ngFor="let item of orgData" [value]="item.Org_id" >
                       {{item.Org_name}}
                     </ng-option>
                   </ng-select>
+                 
                 </div>
 <br/>
                 <div class="form-group">
-                  <label for="branch">CMS Name</label></div>
+                  <label for="I_cms">CMS Name</label></div>
                   <div class=" col-md-3 " style="height:20%;font-size: 15px; width:100%">
-                  <ng-select id="branch" name="branch" [(ngModel)]="selectedCms" (change)="selectedC()"  (change)="itemSelected">
+                  <ng-select id="I_cms" name="i_cms" [(ngModel)]="selectedCms" (change)="selectedC()" required >
                     <ng-option *ngFor="let branch of cmsData" [value]="branch.Cms_id" >
                       {{branch.Cms_name}}
                     </ng-option>
@@ -36,9 +31,9 @@
 <br/>
 
                 <div class="form-group">
-                  <label for="stat">Status</label></div>
+                  <label for="I_status">Status</label></div>
                   <div class=" col-md-3 " style="height:20%;font-size: 15px; width:100%">
-                  <ng-select name="stsa" [(ngModel)]="selectedStatus" (change)="selectedS()" (change)="itemSelected">
+                  <ng-select id="I_status" name="i_status" [(ngModel)]="selectedStatus" (change)="selectedS()"  required>
                     <ng-option *ngFor="let sts of statData" [value]="sts.Stat_id">
                       {{sts.Stat_name}}
                     </ng-option>
@@ -47,30 +42,28 @@
 
 <br/>
                 <div class="form-group">
-                  <label for="aurl">Applications</label>
+                  <label for="I_app">Applications</label>
                   
                 </div>  
                 <div class=" col-md-3 " style="height:20%;font-size: 15px; width:100%">
-                  <ng-select name="app" [(ngModel)]="selectedApp" (change)="selectedS()" [multiple]="true" (change)="itemSelected">
+                  <ng-select id="I_app" name="i_app" [(ngModel)]="selectedApp" (change)="selectedS()" [multiple]="true"  (change)="itemSelected" (change)="arrayToString($event)" required>
                     <ng-option *ngFor="let aap of appData" [value]="aap.App_id">{{aap.App_name}}</ng-option>
                   </ng-select>
                   
-                 </div>
+                </div>
 
 <br/>
                 <div class="form-group">
-                  <label for="aurl">Application URL</label>
-                  <input id="aurl" type="text" class="form-control"
-                        name="aurl" [(ngModel)]="selectedAppUrl"  (change)="changeA($event)"
-                        
-                        >
+                  <label for="App_url">Application URL</label>
+                  <input id="App_url" type="text" class="form-control"
+                        name="app_url" [(ngModel)]="selectedAppUrl"  (change)="changeA($event)">
                 </div>  
 
 <br/>
                 <div class="form-group">
-                  <label for="comm">Comments</label>
-                  <input id="comm" type="text" class="form-control"
-                        name="comm" [(ngModel)]="selectedCom"  (change)="changeC($event)"
+                  <label for="Comment">Comments</label>
+                  <input id="Comment" type="text" class="form-control"
+                        name="comment" [(ngModel)]="selectedCom"  (change)="changeC($event)"
                         
                         >
                 </div>    
@@ -80,16 +73,15 @@
               </div>
               <br/>
               <br/>
-              <br/>
-              <div class="panel-footer">
-                <button class="btn btn-primary" type="submit">Submit</button>
+              <div class="panel-footer" style="text-align: center;">
+                <button class="btn btn-primary" type="submit" >Submit</button>
              
               <br><br>
               <br>
                 
               </div>
             </div>
-            {{selectedOrg }} {{selectedCms}} {{selectedStatus}} {{selectedApp}} {{selectedAppUrl}} {{selectedCom}}
+          <!--  {{selectedOrg |json}} {{selectedCms |json}} {{selectedStatus |json}} {{selectedApp |json}} {{selectedAppUrl |json}} {{selectedCom |json}}-->
 
       </div>
       </form>
